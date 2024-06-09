@@ -10,7 +10,7 @@ import {
   braavos,
   useInjectedConnectors,
   starkscan,
-  voyager
+  voyager,
 } from "@starknet-react/core";
 import { Header } from "~~/components/Header";
 import { Footer } from "~~/components/Footer";

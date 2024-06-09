@@ -121,7 +121,7 @@ module.exports = {
     //     },
     //   },
     // ],
-    themes: ["black"]
+    themes: ["black"],
   },
   theme: {
     extend: {

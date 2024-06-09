@@ -87,7 +87,7 @@ const deployContract = async (
     }
   } catch (e) {
     console.error("Failed to estimate fee, setting up fee to 0.001 eth");
-    totalFee = 5000000000000000n;  // * 10
+    totalFee = 5000000000000000n; // * 10
   }
 
   totalFee = options?.maxFee || totalFee * 20n; // this optional max fee serves when error AccountValidation Failed or small fee on public networks , try 5n , 10n, 20n, 50n, 100n
