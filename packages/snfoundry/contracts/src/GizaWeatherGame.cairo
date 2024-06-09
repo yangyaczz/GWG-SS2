@@ -27,6 +27,7 @@ trait IGWG<TContractState> {
     fn place_bet(ref self: TContractState, round_id: u64, prediction: bool);
     fn over_round(ref self: TContractState, round_id: u64, is_rain: bool);
     fn claim_reward(ref self: TContractState, round_id: u64);
+    fn grant_owner(ref self: TContractState, new_owner: ContractAddress);
 
     fn get_current_round_id(self: @TContractState) -> u64;
     fn get_duration_interval(self: @TContractState) -> u64;
@@ -193,9 +194,13 @@ mod GizaWeatherGame {
 
             let amount = round.bet_award * self.multi.read();
 
-            self.erc20._mint(caller, amount.into());
+            self.erc20._mint(caller, amount.into() * 1_000_000_000_000_000_000);
         }
 
+        fn grant_owner(ref self: ContractState, new_owner: ContractAddress) {
+            self.accesscontrol.assert_only_role(OWNER_ROLE);
+            self.accesscontrol._grant_role(OWNER_ROLE, new_owner);
+        }
 
         fn get_current_round_id(self: @ContractState) -> u64 {
             self.current_round_id.read()
