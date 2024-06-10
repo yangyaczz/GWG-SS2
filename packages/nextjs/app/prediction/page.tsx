@@ -1008,7 +1008,7 @@ const Prediction: NextPage = () => {
       currentRound.roundId,
       false,
     );
-  }, [contract, currentRoundIndex]);
+  }, [contract, currentRoundIndex, currentRound]);
 
   const { writeAsync: placeBetSun } = useContractWrite({
     calls: callPlaceBetSun,
@@ -1020,7 +1020,7 @@ const Prediction: NextPage = () => {
       currentRound.roundId,
       true,
     );
-  }, [contract, currentRoundIndex]);
+  }, [contract, currentRoundIndex, currentRound]);
 
   const { writeAsync: placeBetRain } = useContractWrite({
     calls: callPlaceBetRain,
@@ -1029,7 +1029,7 @@ const Prediction: NextPage = () => {
   const callClaimReward = useMemo(() => {
     if (!currentRoundIndex || !contract) return [];
     return contract.populateTransaction["claim_reward"]!(currentRound.roundId);
-  }, [contract, currentRoundIndex]);
+  }, [contract, currentRoundIndex, currentRound]);
 
   const { writeAsync: claimReward } = useContractWrite({
     calls: callClaimReward,
@@ -1099,7 +1099,7 @@ const Prediction: NextPage = () => {
           />
         </div>
         <div className='text-2xl font-semibold border-b-2'>
-          Powered By Giza&WeatherXM
+          Powered By Giza
         </div>
       </div> */}
 
