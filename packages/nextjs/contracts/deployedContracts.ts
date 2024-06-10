@@ -6,6 +6,8 @@
 const deployedContracts = {
   devnet: {
     GizaWeatherGame: {
+      address:
+        "0x04d0324c4c662737c9418233efb95537a7f9ff5ec0137f6210518c1ae172a705",
       abi: [
         {
           type: "impl",
