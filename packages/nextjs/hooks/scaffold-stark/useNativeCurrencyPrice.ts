@@ -20,7 +20,8 @@ export const useNativeCurrencyPrice = () => {
   useEffect(() => {
     (async () => {
       if (nativeCurrencyPrice == 0) {
-        const price = await fetchPriceFromCoingecko(targetNetwork);
+        // const price = await fetchPriceFromCoingecko(targetNetwork);
+        const price = 9999;
         setNativeCurrencyPrice(price);
       }
     })();
@@ -28,7 +29,8 @@ export const useNativeCurrencyPrice = () => {
 
   // Get the price of ETH from Coingecko at a given interval
   useInterval(async () => {
-    const price = await fetchPriceFromCoingecko(targetNetwork);
+    // const price = await fetchPriceFromCoingecko(targetNetwork);
+    const price = 9999;
     setNativeCurrencyPrice(price);
   }, scaffoldConfig.pollingInterval);
 
