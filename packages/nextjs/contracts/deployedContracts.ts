@@ -6,8 +6,6 @@
 const deployedContracts = {
   devnet: {
     GizaWeatherGame: {
-      address:
-        "0x04d0324c4c662737c9418233efb95537a7f9ff5ec0137f6210518c1ae172a705",
       abi: [
         {
           type: "impl",
@@ -901,7 +899,7 @@ const deployedContracts = {
   sepolia: {
     GizaWeatherGame: {
       address:
-        "0x06a42c26f5c2eca4be1e7272dd3bec4fc24403c3d195b71e398df601b61bb52b",
+        "0x02080d031fe3e46b4b4d3b7236e62021ec9d4adea303ce741141a79874e0ac03",
       abi: [
         {
           type: "impl",

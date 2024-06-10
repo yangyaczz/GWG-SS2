@@ -1,7 +1,7 @@
 "use client";
 import type { NextPage } from "next";
 import Image from "next/image";
-
+import { BlockNumber } from "starknet";
 import React, { useState, useEffect, useMemo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -947,9 +947,9 @@ const Prediction: NextPage = () => {
   const [animating, setAnimating] = useState(false);
 
   const gwgContractAddress =
-    "0x06A42C26F5c2ECa4Be1E7272dd3bec4fc24403c3d195b71E398DF601B61BB52B";
+    "0x02080d031fe3e46b4b4d3b7236e62021ec9d4adea303ce741141a79874e0ac03";
 
-  const [queryRoundIds, setQueryRoundIds] = useState([7, 8, 9, 10]);
+  const [queryRoundIds, setQueryRoundIds] = useState([6, 5, 2, 3, 4]);
 
   const { data: roundsData } = useContractRead({
     address: gwgContractAddress,
@@ -957,6 +957,7 @@ const Prediction: NextPage = () => {
     functionName: "get_rounds",
     args: [queryRoundIds],
     watch: true,
+    blockIdentifier: "pending" as BlockNumber,
   });
 
   const { data: betsData } = useContractRead({
@@ -965,6 +966,7 @@ const Prediction: NextPage = () => {
     functionName: "get_bets",
     args: [owner as string, queryRoundIds],
     watch: true,
+    blockIdentifier: "pending" as BlockNumber,
   });
 
   useEffect(() => {
@@ -1149,7 +1151,7 @@ const Prediction: NextPage = () => {
 
               <div className="flex justify-center mt-4">
                 <button
-                  onClick={() => callClaimReward()}
+                  onClick={() => claimReward()}
                   disabled={
                     currentBet?.isOver ||
                     currentRound.isRain !== currentBet?.isBetRain

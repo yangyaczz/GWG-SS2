@@ -120,9 +120,9 @@ mod GizaWeatherGame {
                     self.current_round_id.read(),
                     Round {
                         round_id: self.current_round_id.read(),
-                        start_timestamp: get_block_timestamp(),
-                        duration_timestamp: get_block_timestamp() + self.duration_interval.read(),
-                        end_timestamp: get_block_timestamp() + self.settlement_interval.read(),
+                        start_timestamp: start_timestamp,
+                        duration_timestamp: start_timestamp + self.duration_interval.read(),
+                        end_timestamp: start_timestamp + self.settlement_interval.read(),
                         bet_award: probability * self.multi.read(),
                         is_over: false,
                         is_rain: false,

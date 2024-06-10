@@ -1,11 +1,6 @@
-# 🏗 Scaffold-Stark 2
+# Giza Weather Game(Starknet) Scaffold-Stark 2
 
-<h4 align="center">
-  <a href="https://www.docs.scaffoldstark.com/">Documentation</a> |
-  <a href="https://www.scaffoldstark.com/">Website</a>
-</h4>
-
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on Starknet blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+🧪 Giza Weather Game is built using open source framework `Scaffold-Stark 2`, frontend is under nextjs and smart contract is under snfoundry.
 
 ⚙️ Built using NextJS, Starknet.js, Scarb, Starknet-React, Starknet Foundry and Typescript.
 
@@ -15,7 +10,8 @@
 - 🔥 **Burner Wallet & Prefunded Account**: Quickly test your application with a burner wallet and prefunded accounts.
 - 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with Starknet network.
 
-![Debug Contracts tab](./assests/debug-contracts.png)
+![tab1](./assests/1.png)
+![tab1](./assests/2.png)
 
 ## Requirements
 
@@ -96,13 +92,13 @@ If your Starknet Foundry version is not `0.23.0`, you need to install it.
 
 ## Quickstart
 
-To get started with Scaffold-Stark 2, follow the steps below:
+To get started with GWG, follow the steps below:
 
 1. Clone this repo and install dependencies
 
 ```bash
-git clone https://github.com/Quantum3-Labs/scaffold-stark-2 --recurse-submodules
-cd scaffold-stark-2
+git clone https://github.com/yangyaczz/GWG-SS2.git
+cd GWG-SS2
 yarn install
 ```
 
@@ -150,19 +146,7 @@ Visit your app on: `http://localhost:3000`. You can interact with your smart con
 
 **What's next**:
 
-- Edit your smart contract `YourContract.cairo` in `packages/snfoundry/contracts/src`
+- Edit your smart contract `GizaWeatherGame.cairo` in `packages/snfoundry/contracts/src`
 - Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
 - Edit your deployment scripts in `packages/snfoundry/script-ts/deploy.ts`
 - Edit your smart contract tests in `packages/snfoundry/contracts/src/test`. To run tests use `yarn test`
-
-## Documentation
-
-Visit our [docs](https://www.docs.scaffoldstark.com/) to learn how to start building with Scaffold-Stark 2.
-
-To know more about its features, check out our [website](https://scaffoldstark.com)
-
-## Contributing to Scaffold-Stark 2
-
-We welcome contributions to Scaffold-Stark 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/Quantum3-Labs/scaffold-stark-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-Stark 2.
